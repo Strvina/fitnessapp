@@ -1,0 +1,106 @@
+/* Body sa nežnijom plavom pozadinom */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #a3c4f3 0%, #d9e6fb 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Kontejner centriran, beličast sa senkom */
+.container {
+    background: #fff;
+    padding: 40px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    max-width: 90vw;
+    box-sizing: border-box;
+    text-align: center; /* da sve bude centrirano */
+}
+
+/* Naslov u nežnoj plavoj boji */
+h1 {
+    margin-bottom: 28px;
+    font-weight: 700;
+    font-size: 26px;
+    color: #3a6ea5;
+    letter-spacing: 1.1px;
+}
+
+/* Labela blok i centrirano, ne pune celu širinu */
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #2f4f7c;
+    text-align: left;
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Input polja centrirana i istih dimenzija */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 260px;
+    padding: 11px 14px;
+    margin: 0 auto 24px auto;
+    border: 1.8px solid #b3c7e6;
+    border-radius: 7px;
+    font-size: 15px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+    box-sizing: border-box;
+}
+
+/* Fokus na input */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #6a8cc9;
+    box-shadow: 0 0 6px rgba(106, 140, 201, 0.5);
+}
+
+/* Manje dugme, centrira se, elegantno */
+button {
+    width: 180px;
+    padding: 10px 0;
+    background-color: #5a7fcf;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
+    display: block;
+}
+
+button:hover {
+    background-color: #4164b8;
+}
+
+/* Opcioni footer za dodatne linkove */
+.form-footer {
+    margin-top: 18px;
+    font-size: 14px;
+    color: #4a4a4a;
+    text-align: center;
+}
+
+.form-footer a {
+    color: #5a7fcf;
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista korisnika</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/styleHeaderFooter.css}" />
+</head>
+<body>
+
+    <div th:replace="~{user/HeaderFooter :: site-header}"></div>
+
+    <main>
+        <h1>Lista korisnika</h1>
+
+        <a href="/users/create">Dodaj novog korisnika</a>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Ime</th>
+                    <th>Email</th>
+                    <th>Aktivan</th>
+                    <th>Datum kreiranja</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="user : ${users}">
+                    <td th:text="${user.id}">1</td>
+                    <td th:text="${user.name}">Mika</td>
+                    <td th:text="${user.email}">mika@email.com</td>
+                    <td th:text="${user.isActive ? 'Da' : 'Ne'}">Da</td>
+                    <td th:text="${#dates.format(user.createdAt, 'yyyy-MM-dd HH:mm')}">2025-06-06</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <div th:replace="~{user/HeaderFooter :: site-footer}"></div>
+
+</body>
+</html>

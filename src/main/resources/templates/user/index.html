@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="sr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Početna | Fitness App</title>
+    <link rel="stylesheet" th:href="@{/css/home.css}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Dobrodošli u Fitness App</h1>
+        
+        <p>
+            Naša aplikacija koristi veštačku inteligenciju kako bi kreirala personalizovane planove ishrane i treninga
+            prema tvojim ciljevima – bilo da želiš da smršaš, dobiješ mišićnu masu ili jednostavno živiš zdravije.
+        </p>
+
+        <div>
+            <a th:href="@{/login}" class="button">Probaj aplikaciju</a>
+
+            <a th:href="@{/app}" class="button">Probaj aplikaciju</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="sr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Generisani plan</title>
+    <link rel="stylesheet" th:href="@{/css/userProfileForm.css}" />
+</head>
+<body>
+<div class="form-container">
+    <h2>Vaš personalizovani plan ishrane i treninga</h2>
+    <pre th:text="${aiResponse}">Ovde će biti prikazan plan...</pre>
+    <a th:href="@{/UserProfileForm/form}">
+        <button>Izmeni profil</button>
+    </a>
+</div>
+</body>
+</html>

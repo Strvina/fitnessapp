@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Prijava | Fitness App</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Prijavi se</h1>
+        <form th:action="@{/login}" th:object="${user}" method="post">
+            <label>Email:</label>
+            <input type="email" th:field="*{email}" required />
+
+            <label>Lozinka:</label>
+            <input type="password" th:field="*{password}" required />
+
+            <button type="submit">Prijavi se</button>
+
+            <p th:if="${loginError}" th:text="${loginError}" style="color:red;"></p>
+        </form>
+
+
+        <div class="form-footer">
+            Nemaš nalog? <a th:href="@{/register}">Registruj se</a>
+        </div>
+    </div>
+</body>
+
+</html>

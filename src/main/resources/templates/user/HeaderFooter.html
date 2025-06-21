@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Fragments</title>
+    <link rel="stylesheet" th:href="@{/css/styleHeaderFooter.css}" />
+</head>
+<body>
+    <header th:fragment="site-header" class="site-header">
+        <div class="container">
+            <h1 class="logo">FitnessApp</h1>
+            <nav>
+                <ul class="nav">
+                    <li><a href="/">Početna</a></li>
+                    <li><a href="/users">Korisnici</a></li>
+                    <li><a href="/contact">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <footer th:fragment="site-footer" class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 FitnessApp</p>
+        </div>
+    </footer>
+</body>
+</html>

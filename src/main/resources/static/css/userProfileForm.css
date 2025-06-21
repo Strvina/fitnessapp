@@ -1,0 +1,101 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f2f5, #e0e7ff);
+    margin: 0;
+    padding: 0;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-top: 15px;
+    color: #444;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #3f51b5;
+    outline: none;
+}
+
+button {
+    margin-top: 30px;
+    width: 100%;
+    padding: 14px;
+    background-color: #3f51b5;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #303f9f;
+}
+
+/* Restriction grupa */
+.restriction-group {
+    margin-top: 25px;
+}
+
+.restriction-group label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+/* Svaka linija unosa za restrikciju (tip + stavka) */
+.restriction-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+    flex-wrap: wrap; /* da se lepo ponaša i na manjim ekranima */
+}
+
+/* Pojedinačno polje u restrikciji */
+.restriction-field {
+    flex: 1;
+    min-width: 45%;
+}
+
+.restriction-field label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 600;
+    color: #444;
+}

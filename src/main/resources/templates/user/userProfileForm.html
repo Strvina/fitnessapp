@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="sr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Unos korisničkog profila</title>
+    <link rel="stylesheet" th:href="@{/css/userProfileForm.css}" />
+    <script th:src="@{/js/restriction.js}"></script>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Unesi podatke, sta zelis da uradis za SEBE!</h2>
+
+        <form th:action="@{/UserProfileForm/save}" th:object="${userProfile}" method="post">
+
+            <label for="trainingType">Tip treninga</label>
+            <select th:field="*{trainingType}" required>
+                <option value="" disabled selected>Izaberi tip treninga</option>
+                <option value="gym">Teretana</option>
+                <option value="calisthenics">Kalistenika</option>
+                <option value="hybrid">Hibrid</option>
+            </select>
+
+            <label for="weight">Težina (kg)</label>
+            <input type="number" th:field="*{weight}" placeholder="Unesite težinu" min="20" max="500" required />
+
+            <label for="height">Visina (cm)</label>
+            <input type="number" th:field="*{height}" placeholder="Unesite visinu" min="50" max="300" required />
+
+            <div class="restriction-group">
+                <label>Dijetetske/Zdravstvene restrikcije - Alergije</label>
+                <div id="allergy-container">
+                    <div th:each="restriction, iterStat : *{dietRestrictions}"
+                        th:if="${restriction.restrictionType == 'Alergija'}" class="restriction-block">
+                        <input type="hidden" th:field="*{dietRestrictions[__${iterStat.index}__].restrictionType}" />
+                        <label>Stavka alergije</label>
+                        <input type="text" th:field="*{dietRestrictions[__${iterStat.index}__].itemName}"
+                            placeholder="Npr. Polen, Prašina..." />
+                    </div>
+                </div>
+                <button type="button" onclick="addAllergy()">+ Dodaj alergiju</button>
+            </div>
+
+            <div class="restriction-group">
+                <label>Dijetetske restrikcije - Ostale stavke</label>
+                <div id="item-container">
+                    <div th:each="restriction, iterStat : *{dietRestrictions}"
+                        th:if="${restriction.restrictionType != 'Alergija'}" class="restriction-block">
+                        <input type="hidden" th:field="*{dietRestrictions[__${iterStat.index}__].restrictionType}" />
+                        <label>Tip restrikcije</label>
+                        <input type="text" th:field="*{dietRestrictions[__${iterStat.index}__].restrictionType}"
+                            placeholder="Npr. Ishrana, Intolerancija..." />
+                    </div>
+                </div>
+                <button type="button" onclick="addItemRestriction()">+ Dodaj stavku</button>
+            </div>
+
+
+
+
+
+            <!-- Tekstualno polje za ciljeve na dnu -->
+            <label for="goal">Cilj (npr. mršavljenje, masa...)</label>
+            <textarea th:field="*{goal}" placeholder="Unesite svoj cilj" rows="6" required></textarea>
+
+            <button type="submit">Sačuvaj profil</button>
+        </form>
+    </div>
+</body>
+
+</html>

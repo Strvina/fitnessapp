@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registracija</title>
+    <link rel="stylesheet" th:href="@{/css/register.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>Napravi nalog</h1>
+        <form th:action="@{/register}" th:object="${user}" method="post">
+
+    <label for="name">Korisničko ime</label>
+    <input type="text" th:field="*{name}" placeholder="Unesite korisničko ime" th:classappend="${#fields.hasErrors('name')} ? 'error-border' : ''" required/>
+
+    <label for="email">Email</label>
+    <input type="email" th:field="*{email}" placeholder="Unesite email" th:classappend="${#fields.hasErrors('email')} ? 'error-border' : ''" required/>
+
+    <label for="password">Lozinka</label>
+    
+    <input type="password" th:field="*{password}" placeholder="Unesite lozinku" th:classappend="${#fields.hasErrors('password')} ? 'error-border' : ''" required />
+
+
+    <button type="submit">Registruj se</button>
+</form>
+
+        <div class="form-footer">
+            Imaš nalog? <a th:href="@{/login}">Prijava se</a>
+
+        </div>
+    </div>
+</body>
+</html>
